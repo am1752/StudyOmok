@@ -1,0 +1,7 @@
+﻿<UserControl x:Class="PrisimSolutionApp1.Views.SubView"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+    <Grid Background="Aquamarine">
+        <TextBlock Text="SubView" FontSize="20" TextAlignment="Left" VerticalAlignment="Bottom"/>
+    </Grid>
+</UserControl>

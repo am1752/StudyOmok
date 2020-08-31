@@ -1,0 +1,57 @@
+﻿<Window x:Class="SecondCliburnApp.Views.ShellView"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:SecondCliburnApp.Views"
+        mc:Ignorable="d"
+        Title="ShellView" Height="400" Width="600">
+    <Grid>
+        <!--auto는 들어가는 콘트롤에 따라 싸이즈가 달라짐-->
+        <Grid.RowDefinitions>
+            <RowDefinition Height="20"/>
+            <RowDefinition Height="auto"/>
+            <RowDefinition Height="auto"/>
+            <RowDefinition Height="auto"/>
+            <RowDefinition Height="auto"/>
+            <RowDefinition Height="auto"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="20"/>
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="20"/>
+            <ColumnDefinition Width="auto"/>
+            <ColumnDefinition Width="Auto"/>
+            <ColumnDefinition Width="auto"/>
+            <ColumnDefinition Width="auto"/>
+            <ColumnDefinition/>
+            <ColumnDefinition Width="20"/>
+        </Grid.ColumnDefinitions>
+
+        <TextBlock  Grid.Row="1" Grid.Column="1" Grid.ColumnSpan="2"
+                    FontSize="20" Height="30"
+                    Text="{Binding FullName}"/>
+        <TextBox x:Name="FirstName"
+                 Width="100" Height="25"
+                 Grid.Row="2" Grid.Column="1" />
+        <TextBox x:Name="LastName"
+                 Width="100" Height="25"
+                 Grid.Row="2" Grid.Column="2"/>
+
+        <ComboBox x:Name="People" DisplayMemberPath="FirstName"
+                  SelectedItem="{Binding SelectedPerson}"
+                  Grid.Row="3" Grid.Column="1"/>
+        <TextBlock Grid.Row="3" Grid.Column="2" Width="100" x:Name="SelectedPerson_LastName"/>
+        <Button x:Name="ClearName"
+                Grid.Column="1" Grid.Row="4"
+                Height="30" Content="Clear"/>
+        <Button Grid.Row="5" Grid.Column="1" x:Name="LoadPageOne"
+                Content="Load Page 1"/>
+        <Button Grid.Row="5" Grid.Column="2" x:Name="LoadPageTwo"
+                Content="Load Page 2"/>
+
+        <ContentControl x:Name="ActiveItem" Grid.Row="6" Grid.Column="1" Grid.ColumnSpan="5"/>
+
+
+    </Grid>
+</Window>
